@@ -1,0 +1,101 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Roboto, serif;
+    height: 100vh;
+    background-color: rgb(64, 0, 116);
+}
+.total{
+    width: 100vw;
+    height: 100vh;
+}
+.header{
+    height: 20vh;
+    width: 100vw;
+    background-color: red;
+}
+.content{
+    width: 100vw;
+    background-color: green;
+    display: flex;
+}
+
+.footer{
+    height: 10vh;
+    width: 100vw;
+    background-color: wheat;
+}
+.logo{
+    height: 10vh;
+    width: 100vw;
+    text-align: center;
+}
+.buttons{
+    width: 100vw;
+    height: 10vh;
+    text-align: center;
+}
+h2{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.filters{
+    height: 70vh;
+    width: 25vw;
+    background-color: antiquewhite;
+}
+
+.products{
+
+    width: 75vw;
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.product{
+    margin: 10px;
+    height: 400px;
+    width: 280px;
+    background-color: red;
+    text-align: center;
+    border-radius: 15px;
+}
+.product .photo{
+    height: 250px;
+    width: 250px;
+    background-color: green;
+    margin: 15px 15px 0 15px;
+}
+
+.product .stars{
+    height: 40px;
+    width: 280px;
+    background-color: aqua;
+    text-align: center;
+}
+
+.product .stars img{
+    width:250px;
+    height:40px;
+}
+
+.product img{
+    height: 250px;
+    width: 250px;
+}
+
+.product h1{
+    margin: 0;
+}
+.product h2{
+    margin: 0;
+}
+.product h3{
+    margin: 0;
+}
