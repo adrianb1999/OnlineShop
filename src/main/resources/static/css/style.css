@@ -6,20 +6,21 @@ body, html {
 body{
     font-family: Roboto, serif;
     height: 100vh;
-    background-color: rgb(64, 0, 116);
+
 }
 .total{
     width: 100vw;
     height: 100vh;
 }
 .header{
-    height: 20vh;
+    height: 15vh;
     width: 100vw;
-    background-color: red;
+    background-color: #ffffff;
+    margin-bottom: 2px;
 }
 .content{
     width: 100vw;
-    background-color: green;
+    background-color: #FFFFFF;
     display: flex;
 }
 
@@ -28,16 +29,159 @@ body{
     width: 100vw;
     background-color: wheat;
 }
+.upperHeader{
+    display:flex;
+    height: 10vh;
+}
+
+.cart-page .item-delete{
+    margin: auto 25px auto 190px;
+    color: black;
+
+}
+.cart-page .item-amount{
+    margin: auto;
+}
+.cart-page .content{
+    display: flex;
+}
+.cart-page .item-name{
+    width: 190px;
+}
+
+.cart-page .item-details{
+    width: 100%;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.cart-page .cart-item{
+    height: 110px;
+    margin-left: 50px;
+}
+
+.cart-page .head{
+     box-shadow: 0 0 2px 0 #5955b3;
+     height: 100px;
+     display: flex;
+}
+.cart-page h1{
+    margin: auto;
+}
+.cart-page .items{
+    min-height: 300px;
+    width: 55%;
+}
+
+.cart-page .order-details{
+    width: 45%;
+    box-shadow: 0 0 2px 0 #5955b3;
+    margin-right: 50px;
+    height: 330px;
+}
+.cart-page .order-button{
+    margin: auto auto 50px auto;
+}
+
 .logo{
     height: 10vh;
-    width: 100vw;
+    width: 20vw;
     text-align: center;
 }
-.buttons{
-    width: 100vw;
+
+.searchBar{
     height: 10vh;
-    text-align: center;
+    width: 40vw;
+    display: flex;
 }
+#search{
+    margin: auto;
+    width: 440px;
+    height: 40px;
+}
+
+.accountCart{
+    height: 10vh;
+    width: 40vw;
+    text-align: center;
+    display: flex;
+}
+.cart{
+    margin: auto 15px auto auto;
+    display: flex;
+}
+.cart:hover, button {
+    cursor: pointer;
+}
+
+.cart-item{
+    display: flex;
+    width: 250 px;
+    height: 60px;
+    box-shadow: 0 0 2px 0 #5955b3;
+}
+.cart-info{
+    display: flex;
+    height:65px;
+}
+
+.item-price{
+    margin:auto 5px auto auto;
+}
+.item-name{
+    width:100px;
+    text-decoration:none;
+    margin:auto 5px auto 5px;
+}
+.item-delete{
+    margin:auto auto auto 17px;
+}
+.item-delete:hover{
+    cursor : pointer;
+}
+
+.item-img{
+    margin:auto 0 auto 10px;
+}
+
+.item-details{
+    display:flex;
+}
+.item-amount{
+    margin: auto 5px auto auto;
+}
+.account{
+    margin: auto 125px auto 5px;
+    display: flex;
+}
+.account :hover {
+     cursor: pointer;
+}
+
+.buttons{
+    background-color:#FFFFFF;
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    box-shadow: 0 0 2px 0 #5955b3;
+}
+#laptop{
+    margin-left: 160px;
+}
+#printing{
+    margin-right: 750px;
+}
+.buttons a{
+    margin: auto;
+    text-decoration: none;
+}
+
+.logo h2{
+    padding: 0;
+    margin: 23px;
+    border: 0;
+}
+
 h2{
     padding: 0;
     margin: 0;
@@ -46,8 +190,8 @@ h2{
 
 .filters{
     height: 70vh;
-    width: 25vw;
-    background-color: antiquewhite;
+    width: 20vw;
+    background-color: #FFFFFF;
 }
 
 .products{
@@ -57,37 +201,74 @@ h2{
     padding: 10px;
     flex-wrap: wrap;
 }
+.add-cart-button:hover{
+    background-color: #24224b;
+}
 
+a{
+text-decoration:none;
+color:#000000;
+}
 .product{
     margin: 10px;
     height: 400px;
-    width: 280px;
-    background-color: red;
+    width: 260px;
+    background-color: #FFFFFF;
     text-align: center;
     border-radius: 15px;
+    box-shadow: 0 0 2px 0 #5955b3;
+}
+.product:hover{
+    box-shadow: 0 0 15px 0 #5955b3;
 }
 .product .photo{
-    height: 250px;
-    width: 250px;
+    height: 230px;
+    width: 230px;
     background-color: green;
     margin: 15px 15px 0 15px;
 }
 
+.product button, .check-cart-button, .button, button{
+    width: 150px;
+    height: 35px;
+    margin-top:8px;
+    border-radius: 5px 10px 5px 10px;
+    border: 0px;
+    color: white;
+    box-shadow: 0 0 1px 0 #000000;
+    background-color: #5955b3;
+}
+
+#total-amount{
+    margin: auto;
+    width: 160px;
+}
+.empty-cart{
+    margin: 10px;
+}
+.check-cart-button{
+    margin: auto 15px auto auto;
+    width: 120px;
+}
+
+.product button:hover{
+    cursor:pointer;
+}
+
 .product .stars{
     height: 40px;
-    width: 280px;
-    background-color: aqua;
+    width: 260px;
     text-align: center;
 }
 
 .product .stars img{
-    width:250px;
+    width:230px;
     height:40px;
 }
 
 .product img{
-    height: 250px;
-    width: 250px;
+    height: 230px;
+    width: 230px;
 }
 
 .product h1{
@@ -98,4 +279,119 @@ h2{
 }
 .product h3{
     margin: 0;
+}
+
+/* MODAL STUFF */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    margin-top:10vh;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    text-align: center;
+}
+
+/* Modal Content */
+.login-modal-content, .logged-modal-content{
+    background-color: #fefefe;
+    margin: 0 30px 0 auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 230px;
+    border-radius:0 0 15px 15px;
+}
+.logged-modal-content{
+    padding: 0px;
+    width: 300px;
+}
+.cart-modal-content {
+    background-color: #fefefe;
+    margin: 0 97px 0 auto;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius:0 0 15px 15px;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.account-modal{
+    display: flex;
+    text-decoration: none;
+    height: 40px;
+    width: 300px;
+    box-shadow: 0 0 1px 0 #000000;
+}
+.account-modal a{
+    margin: auto;
+}
+
+.logout-button{
+    margin: 10px auto 10px auto;
+}
+.increase-amount, .decrease-amount{
+    margin: auto;
+}
+.material-icons.md-25 {
+    font-size: 30px;
+    color: #5955b3;
+}
+
+.material-icons.md-30 {
+    font-size: 30px;
+    color: #ffeb68;
+}
+
+.material-icons.md-36 {
+    font-size: 35px;
+    color: #5955b3;
+}
+
+.product-info{
+    margin: auto auto auto 200px;
+}
+
+.product-info h1{
+    margin-bottom: 5px;
+}
+
+.product-info img{
+    width: 400px;
+}
+
+.product-info .info{
+    display: flex;
+}
+.product-info .details{
+    padding: 10px;
+}
+
+.product-info .name{
+    width: 1100px;
+    border: 0;
+    border-bottom: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+.swal-title {
+  margin: 0px;
+  font-size: 30px;
 }

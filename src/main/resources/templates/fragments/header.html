@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<div class="header" th:fragment="header">
+    <div class="upperHeader">
+        <div class="logo">
+            <h2>ONLINE SHOP</h2>
+        </div>
+        <div class="searchBar">
+            <input type="text" id="search" onkeyup="search()" placeholder="Search for products.." title="Type in a name">
+        </div>
+        <div class="accountCart">
+            <div class="cart" id="myCart">
+                <span class="material-icons md-36">shopping_cart</span>
+                <span class="material-icons md-25">arrow_drop_down</span>
+            </div>
+            <p id="account-value" style="display:none;" th:text="${user}"></p>
+            <div class="account " id="myAccount">
+                <span class="material-icons md-36">account_circle</span>
+                <span class="material-icons md-25">arrow_drop_down</span>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <a href="/category/laptop" id="laptop">Laptop</a>
+        <a href="/category/smartphone">Smartphone</a>
+        <a href="/category/tv">TV & Video</a>
+        <a href="/category/tv">Games</a>
+        <a href="/category/tv">Pc Components</a>
+        <a href="/category/tv" id="printing">Printing</a>
+    </div>
+</div>
+</body>
+</html>

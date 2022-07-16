@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <script th:src="@{/js/main.js}"></script>
@@ -12,20 +11,45 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <title>Online Shop</title>
+
 </head>
-<body class="category">
+<body class="product-page">
 <div class="total">
     <div th:replace="fragments/header.html"></div>
     <div class="content">
-        <div class="filters"></div>
-        <div class="products"></div>
+        <div class="product-info">
+
+            <div class="name">
+                <h1 th:text="${product.name}"></h1>
+
+                <div class="stars">
+                    <span class="material-icons md-30">star</span>
+                    <span class="material-icons md-30">star</span>
+                    <span class="material-icons md-30">star</span>
+                    <span class="material-icons md-30">star</span>
+                    <span class="material-icons md-30">star</span>
+                </div>
+
+            </div>
+            <div class="info">
+                <img th:src="${product.imageUrl}" alt="">
+                <div class="details">
+                    <h1 th:text="${product.price}+' lei'"></h1>
+                    <h2 th:text="${product.description}"></h2>
+                    <button class="button">Adauga in cart!</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="footer">
 
     </div>
 </div>
+
 
 <div id="loginModal" class="modal">
     <div class="login-modal-content">
@@ -38,28 +62,13 @@
     </div>
 </div>
 
-<div id="loggedModal" class="modal">
-    <div class="logged-modal-content" id="logged-modal">
-        <div class="account-modal">
-            <a href="user/info" >Account info</a>
-        </div>
-        <div class="account-modal">
-            <a href="user/addresses">Addresses</a>
-        </div>
-        <div class="account-modal">
-            <a href="user/orders">Orders</a>
-        </div>
-        <button class="button logout-button" onclick="logoutUser()">Logout</button>
-    </div>
-</div>
-
 <div id="cartModal" class="modal">
     <div class="cart-modal-content" id="cart-modal">
         <div id="cart-modal-items">
         </div>
         <div class="cart-info">
             <p id="total-amount"></p>
-            <button class="check-cart-button" onclick="openCartPage()">Vezi coșul</button>
+            <button class="check-cart-button">Vezi coșul</button>
         </div>
         <div class="empty-cart">
             No items in cart.

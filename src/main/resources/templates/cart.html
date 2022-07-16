@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script th:src="@{/js/main.js}"></script>
+    <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css"/>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Online Shop</title>
+</head>
+<body class="cart-page">
+<div class="total">
+    <div class="head">
+        <h1>Adrian99 SHOP</h1>
+    </div>
+    <div class="content">
+        <div class="items" id="cart-items">
+
+        </div>
+        <div class="order-details">
+            <p>Total: 4.000 Lei</p><br>
+            <button>Add new address</button><br>
+            <form action="#" autocomplete="off" id="orderForm">
+
+                <input type="Text" id="email" placeholder="Email..."><br>
+
+
+                <label for="shipping-address">Shipping address:</label>
+                <br>
+                <select id="shipping-address" name="categories" class="formSelect">
+
+                </select>
+                <br>
+                <label for="billing-address">Billing address:</label>
+                <br>
+                <select id="billing-address" name="categories" class="formSelect">
+
+                </select><br>
+
+
+                <button class="order-button">Place Order!</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <form action="#" autocomplete="off" id="addressForm">
+            <h3 id="expenseFormTitle">Add address</h3>
+
+            <input type="Text" id="address-full" placeholder="Complete address..."><br>
+            <input type="Text" id="address-phoneNumber" placeholder="Phone number..."><br>
+            <input type="Text" id="address-fullName" placeholder="Full name..."><br>
+
+            <br>
+            <button class="button" id="addAddressButton">Add address</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
