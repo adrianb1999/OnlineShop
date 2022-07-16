@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Iterable<User> findAll() {
-        return null;
+        return userRepository.findAll();
     }
 
     @Override
@@ -48,12 +48,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteById(Long aLong) {
-
+        userRepository.deleteById(aLong);
     }
 
     @Override
     public void deleteAllById(Iterable<? extends Long> longs) {
-
+        userRepository.deleteAllById(longs);
     }
 
     @Override
@@ -85,6 +85,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean isPhoneNumberValid(String phoneNumber) {
-        return true;
+        return phoneNumber.matches("^[0-9]$");
     }
 }

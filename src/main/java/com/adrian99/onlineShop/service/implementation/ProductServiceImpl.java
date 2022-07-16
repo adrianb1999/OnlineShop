@@ -46,7 +46,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteById(Long aLong) {
-
+        productRepository.deleteById(aLong);
     }
 
     @Override
@@ -60,6 +60,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteAllById(Iterable<? extends Long> longs) {
+        productRepository.deleteAllById(longs);
     }
 
     //QUERY DSL QUERIES

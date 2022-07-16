@@ -1,5 +1,6 @@
 package com.adrian99.onlineShop.service.implementation;
 
+import com.adrian99.onlineShop.dto.OrderDTO;
 import com.adrian99.onlineShop.model.Order;
 import com.adrian99.onlineShop.repository.OrderRepository;
 import com.adrian99.onlineShop.service.OrderService;
@@ -19,7 +20,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Iterable<Order> findAll() {
-        return null;
+        return orderRepository.findAll();
     }
 
     @Override
@@ -34,26 +35,26 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public <S extends Order> Iterable<S> saveAll(Iterable<S> entities) {
-        return null;
+        return orderRepository.saveAll(entities);
     }
 
     @Override
     public void deleteById(Long aLong) {
-
+        orderRepository.deleteById(aLong);
     }
 
     @Override
     public void deleteAllById(Iterable<? extends Long> longs) {
-
+        orderRepository.deleteAllById(longs);
     }
 
     @Override
-    public Map<String, Object> findOrderById(Long id) {
+    public OrderDTO findOrderById(Long id) {
         return orderRepository.findOrderById(id);
     }
 
     @Override
-    public List<Map<String, Object>> findAllOrders() {
+    public List<OrderDTO> findAllOrders() {
         return orderRepository.findAllOrders();
     }
 }

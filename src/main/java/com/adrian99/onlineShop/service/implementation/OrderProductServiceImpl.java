@@ -6,6 +6,7 @@ import com.adrian99.onlineShop.service.OrderProductService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class OrderProductServiceImpl implements OrderProductService {
@@ -23,7 +24,7 @@ public class OrderProductServiceImpl implements OrderProductService {
 
     @Override
     public OrderProduct findById(Long aLong) {
-        return null;
+        return orderProductRepository.findById(aLong).orElse(null);
     }
 
     @Override
@@ -48,6 +49,11 @@ public class OrderProductServiceImpl implements OrderProductService {
 
     @Override
     public List<OrderProduct> findAllOrderProductByOrderId(Long id) {
-        return findAllOrderProductByOrderId(id);
+        return orderProductRepository.findAllOrderProductByOrderId(id);
+    }
+
+    @Override
+    public Map<Long, OrderProduct> findAllOrderProductByOrderIdMap(Long id) {
+        return orderProductRepository.findAllOrderProductByOrderIdMap(id);
     }
 }

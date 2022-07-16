@@ -6,7 +6,9 @@ import com.adrian99.onlineShop.repository.custom.OrderProductCustomRepository;
 import com.querydsl.jpa.impl.JPAQuery;
 
 import javax.persistence.EntityManager;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class OrderProductCustomRepositoryImpl implements OrderProductCustomRepository {
 
@@ -22,11 +24,22 @@ public class OrderProductCustomRepositoryImpl implements OrderProductCustomRepos
         JPAQuery<OrderProduct> orderQuery = new JPAQuery<>(entityManager);
         QOrderProduct qOrderProduct = QOrderProduct.orderProduct;
 
-        List<OrderProduct> orderProducts = orderQuery.select(qOrderProduct)
+        return orderQuery.select(qOrderProduct)
                 .from(qOrderProduct)
-                .where(qOrderProduct.product.id.eq(id))
+                .where(qOrderProduct.order.id.eq(id))
                 .fetch();
+    }
 
-        return orderProducts;
+    @Override
+    public Map<Long, OrderProduct> findAllOrderProductByOrderIdMap(Long id) {
+        List<OrderProduct> productList = findAllOrderProductByOrderId(id);
+
+        Map<Long, OrderProduct> orderProductMap = new HashMap<>();
+
+        for(OrderProduct orderProduct : productList){
+            orderProductMap.put(orderProduct.getProduct().getId(), orderProduct);
+        }
+
+        return orderProductMap;
     }
 }

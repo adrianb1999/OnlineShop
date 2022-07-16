@@ -1,8 +1,11 @@
 package com.adrian99.onlineShop.repository.custom;
 
+import com.adrian99.onlineShop.dto.OrderDTO;
+
 import java.util.*;
 
 public interface OrderCustomRepository {
-    Map<String, Object> findOrderById(Long id);
-    List<Map<String, Object>> findAllOrders();
+    OrderDTO findOrderById(Long id);
+    List<OrderDTO> findAllOrders();
+
 }
