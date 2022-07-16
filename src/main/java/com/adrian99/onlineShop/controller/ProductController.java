@@ -1,11 +1,15 @@
 package com.adrian99.onlineShop.controller;
 
+import com.adrian99.onlineShop.exception.ApiRequestException;
 import com.adrian99.onlineShop.model.Category;
 import com.adrian99.onlineShop.model.Product;
 import com.adrian99.onlineShop.service.ProductService;
+import org.checkerframework.checker.units.qual.A;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class ProductController {

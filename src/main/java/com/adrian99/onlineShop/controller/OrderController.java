@@ -5,7 +5,6 @@ import com.adrian99.onlineShop.dto.OrderProductDTO;
 import com.adrian99.onlineShop.exception.ApiRequestException;
 import com.adrian99.onlineShop.model.*;
 import com.adrian99.onlineShop.service.*;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,16 +31,15 @@ public class OrderController {
     }
 
     @GetMapping("/api/orders")
-    public List<Map<String, Object>> allOrders() {
-        //TODO Needs work
+    public List<OrderDTO> allOrders() {
         return orderService.findAllOrders();
     }
 
     @GetMapping("/api/order/{orderId}")
-    public Map<String, Object> getOrder(@PathVariable Long orderId) {
-        //TODO Needs work
+    public OrderDTO getOrder(@PathVariable Long orderId) {
         if (orderService.findById(orderId) == null)
             throw new ApiRequestException("The order with id " + orderId + " do not exists!");
+
         return orderService.findOrderById(orderId);
     }
 
@@ -54,7 +52,7 @@ public class OrderController {
         Order currentOrder = orderService.findById(orderId);
         Address shippingAddress;
         Address billingAddress;
-        int amount = 0;
+        int amount = 0; //TODO VEZI SA MEARGA BINE AMOUNTUL LA FINAL
 
         if (orderInfo == null)
             throw new ApiRequestException("Nothing to change!");
@@ -157,7 +155,6 @@ public class OrderController {
         return updatedOrder;
     }
 
-
     @Transactional
     @PostMapping("/api/order")
     public OrderDTO addOrder(@RequestBody OrderDTO orderInfo, Principal principal) {
@@ -188,7 +185,9 @@ public class OrderController {
                 throw new ApiRequestException("Shipping address do not exists!");
 
         } else {
-            shippingAddress =  addressService.addAddress(orderInfo.getShippingAddress());
+            shippingAddress = orderInfo.getShippingAddress().getAddress();
+            shippingAddress.setUser(currentUser);
+            shippingAddress =  addressService.addAddress(shippingAddress);
         }
 
         if(orderInfo.getBillingAddress().getId() != null) {
@@ -198,7 +197,9 @@ public class OrderController {
                 throw new ApiRequestException("Billing address do not exists!");
 
         } else {
-            billingAddress =  addressService.addAddress(orderInfo.getBillingAddress());
+            billingAddress = orderInfo.getBillingAddress().getAddress();
+            billingAddress.setUser(currentUser);
+            billingAddress =  addressService.addAddress(billingAddress);
         }
 
         //Products
